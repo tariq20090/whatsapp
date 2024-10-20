@@ -73,9 +73,7 @@ class _CallsScreenState extends State<CallsScreen> {
                 const SizedBox(width: 8),
                 IconButton(
                   icon: const Icon(Icons.phone),
-                  onPressed: () {
-                    
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),

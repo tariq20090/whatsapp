@@ -61,17 +61,13 @@ class StatusScreen extends StatelessWidget {
           ListTile(
             title: const Text('Viewed Updates'),
             subtitle: const Text('See all updates'),
-            onTap: () {
-              
-            },
+            onTap: () {},
           ),
           const Divider(),
           ListTile(
             title: const Text('Recent Updates'),
             subtitle: const Text('See recent updates'),
-            onTap: () {
-            
-            },
+            onTap: () {},
           ),
         ],
       ),

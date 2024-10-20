@@ -4,6 +4,7 @@ import 'status.dart';
 import 'calls.dart';
 import 'chats.dart';
 import 'contacts.dart';
+import 'update.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +37,7 @@ class _WhatsAppHomeState extends State<WhatsAppHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(backgroundColor: Colors.yellow,
         title: const Text('WhatsApp'),
         actions: [
           IconButton(
@@ -52,7 +53,12 @@ class _WhatsAppHomeState extends State<WhatsAppHome> {
       drawer: const WhatsAppDrawer(),
       body: const WhatsAppChatList(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ChatsScreen()),
+          );
+        },
         child: const Icon(Icons.message),
       ),
     );
@@ -72,8 +78,8 @@ class WhatsAppDrawer extends StatelessWidget {
             accountEmail: Text('Mubashir@gmail.com'),
             currentAccountPicture: CircleAvatar(
               backgroundColor: Colors.green,
-              backgroundImage: NetworkImage(''
-,
+              backgroundImage: AssetImage(
+                'assets/images/audi.jpeg',
               ),
             ),
           ),
@@ -108,8 +114,18 @@ class WhatsAppDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            leading: const Icon(Icons.update),
+            title: const Text('Update'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const UpdateScreen()),
+              );
+            },
+          ),
+          ListTile(
             leading: const Icon(Icons.settings),
-            title: const Text('Settings'),
+            title: const Text('setting'),
             onTap: () {
               Navigator.pop(context);
             },
@@ -140,9 +156,7 @@ class WhatsAppChatList extends StatelessWidget {
         ListTile(
           leading: CircleAvatar(
             backgroundColor: Colors.transparent,
-            backgroundImage: NetworkImage(
-              'https://i.pinimg.com/736x/40/5d/98/405d983f3c0e05c582c391112069fa8b.jpg',
-            ),
+            backgroundImage: AssetImage('assets/images/bmw.jpeg'),
           ),
           title: Text('Muzzamil'),
           subtitle: Text('How are you?'),
@@ -151,9 +165,7 @@ class WhatsAppChatList extends StatelessWidget {
         ListTile(
           leading: CircleAvatar(
             backgroundColor: Colors.blue,
-            backgroundImage: NetworkImage(
-              '(link unavailable)',
-            ),
+            backgroundImage: NetworkImage('assets/images/car.jpeg'),
           ),
           title: Text('Mubashir'),
           subtitle: Text('I am good, thanks!'),
@@ -161,9 +173,8 @@ class WhatsAppChatList extends StatelessWidget {
         ),
         ListTile(
           leading: CircleAvatar(
-            backgroundColor: Colors.purple,
             backgroundImage: NetworkImage(
-              '(link unavailable)',
+              'https://upload.wikimedia.org/wikipedia/commons/a/a8/Shahid_Afridi_in_2017.jpg',
             ),
           ),
           title: Text('Tariq'),
@@ -172,10 +183,7 @@ class WhatsAppChatList extends StatelessWidget {
         ),
         ListTile(
           leading: CircleAvatar(
-            backgroundColor: Colors.red,
-            backgroundImage: NetworkImage(
-              '(link unavailable)',
-            ),
+            backgroundImage: AssetImage('asset/images/audi.jpeg'),
           ),
           title: Text('Hmaza'),
           subtitle: Text('I will call you'),
@@ -184,9 +192,7 @@ class WhatsAppChatList extends StatelessWidget {
         ListTile(
           leading: CircleAvatar(
             backgroundColor: Colors.yellow,
-            backgroundImage: NetworkImage(
-              '(link unavailable)',
-            ),
+            backgroundImage: NetworkImage('assets/images/bmw.jpeg'),
           ),
           title: Text('Anwer'),
           subtitle: Text('Okay, see you later'),
@@ -194,10 +200,7 @@ class WhatsAppChatList extends StatelessWidget {
         ),
         ListTile(
           leading: CircleAvatar(
-            backgroundColor: Colors.grey,
-            backgroundImage: NetworkImage(
-              '(link unavailable)',
-            ),
+            backgroundImage: AssetImage('assets/images/audi.jpeg'),
           ),
           title: Text('Ameen'),
           subtitle: Text('Okay, see you later'),
@@ -205,10 +208,8 @@ class WhatsAppChatList extends StatelessWidget {
         ),
         ListTile(
           leading: CircleAvatar(
-            backgroundColor: Colors.blue,
             backgroundImage: NetworkImage(
-              '(link unavailable)',
-            ),
+                'https://upload.wikimedia.org/wikipedia/commons/a/a8/Shahid_Afridi_in_2017.jpg'),
           ),
           title: Text('Jameel'),
           subtitle: Text('Okay, see you later'),
@@ -216,9 +217,8 @@ class WhatsAppChatList extends StatelessWidget {
         ),
         ListTile(
           leading: CircleAvatar(
-            backgroundColor: Colors.pink,
             backgroundImage: NetworkImage(
-              '(link unavailable)',
+              'https://upload.wikimedia.org/wikipedia/commons/a/a8/Shahid_Afridi_in_2017.jpg',
             ),
           ),
           title: Text('Noman'),
@@ -227,10 +227,7 @@ class WhatsAppChatList extends StatelessWidget {
         ),
         ListTile(
           leading: CircleAvatar(
-            backgroundColor: Colors.lightBlue,
-            backgroundImage: NetworkImage(
-              '(link unavailable)',
-            ),
+            backgroundImage: AssetImage('assets/images/car.jpeg'),
           ),
           title: Text('Khalid'),
           subtitle: Text('Okay, see you later'),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class ChatScreen extends StatelessWidget {
   final String recipient;
 
@@ -11,9 +12,7 @@ class ChatScreen extends StatelessWidget {
         title: Text(recipient),
       ),
       body: ListView(
-        children: const [
-          
-        ],
+        children: const [],
       ),
       bottomSheet: Container(
         padding: const EdgeInsets.all(16),
@@ -29,9 +28,7 @@ class ChatScreen extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             IconButton(
-              onPressed: () {
-                
-              },
+              onPressed: () {},
               icon: const Icon(Icons.send),
             ),
           ],
