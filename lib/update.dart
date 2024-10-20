@@ -76,8 +76,7 @@ class ImageViewScreen extends StatelessWidget {
   final String userName;
 
   const ImageViewScreen(
-      {Key? key, required this.imagePath, required this.userName})
-      : super(key: key);
+      {super.key, required this.imagePath, required this.userName});
 
   @override
   Widget build(BuildContext context) {

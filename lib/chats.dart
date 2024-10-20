@@ -104,13 +104,13 @@ class ChatDetailScreen extends StatelessWidget {
         title: Text(name),
       ),
       body: ListView(
-        children: [
+        children: const [
           // Chat messages
-          const ListTile(
+          ListTile(
             title: Text('Hello! How are you?'),
           ),
           ListTile(
-            title: const Text('I am good, thanks!'),
+            title: Text('I am good, thanks!'),
           ),
         ],
       ),
@@ -118,9 +118,9 @@ class ChatDetailScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Row(
           children: [
-            Expanded(
+            const Expanded(
               child: TextField(
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'Type a message',
                 ),

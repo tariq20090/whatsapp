@@ -2,11 +2,11 @@
 import 'package:flutter/material.dart';
 
 class StatusScreen extends StatelessWidget {
-  const StatusScreen({Key? key}) : super(key: key);
+  const StatusScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    String? _status;
+    String? status;
     var scaffold = Scaffold(
       appBar: AppBar(
         title: const Text('Status'),
@@ -20,12 +20,12 @@ class StatusScreen extends StatelessWidget {
               showDialog(
                 context: context,
                 builder: (context) {
-                  final TextEditingController _statusController =
+                  final TextEditingController statusController =
                       TextEditingController();
                   return AlertDialog(
                     title: const Text('Add Status'),
                     content: TextField(
-                      controller: _statusController,
+                      controller: statusController,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Type your status',
@@ -41,9 +41,9 @@ class StatusScreen extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          _status = _statusController.text;
-                          if (_status != null && _status!.isNotEmpty) {
-                            print(_status);
+                          status = statusController.text;
+                          if (status != null && status!.isNotEmpty) {
+                            print(status);
                           } else {
                             print("Status cannot be empty");
                           }

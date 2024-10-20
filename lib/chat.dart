@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 class ChatScreen extends StatelessWidget {
   final String recipient;
 
-  const ChatScreen({Key? key, required this.recipient}) : super(key: key);
+  const ChatScreen({super.key, required this.recipient});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class ChatScreen extends StatelessWidget {
         title: Text(recipient),
       ),
       body: ListView(
-        children: [
+        children: const [
           
         ],
       ),
@@ -19,9 +19,9 @@ class ChatScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Row(
           children: [
-            Expanded(
+            const Expanded(
               child: TextField(
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'Type a message',
                 ),
